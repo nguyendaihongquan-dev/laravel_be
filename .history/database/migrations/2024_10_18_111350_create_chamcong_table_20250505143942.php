@@ -11,13 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('taikhoan', function (Blueprint $table) {
-            // Xóa cột id và biến tenDN thành khóa chính
-            $table->string('tenDN', 191)->primary(); // Đặt tenDN là khóa chính
-            $table->string('matKhau');
+        Schema::create('chamcong', function (Blueprint $table) {
+            $table->id('maChamCong');
+            $table->time('gioCheckin');
+            $table->time('gioCheckout')->nullable();
+            $table->date('ngay');
+            $table->integer('tongGioLam')->nullable();
+            $table->float('cong', 3, 2)->nullable();
             $table->foreignId('maND')->constrained('nguoidung','maND')->onDelete('cascade');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -25,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('taikhoan');
+        Schema::dropIfExists('chamcong');
     }
 };

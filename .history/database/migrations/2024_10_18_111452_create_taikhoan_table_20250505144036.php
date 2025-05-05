@@ -15,7 +15,7 @@ return new class extends Migration
             // Xóa cột id và biến tenDN thành khóa chính
             $table->string('tenDN', 191)->primary(); // Đặt tenDN là khóa chính
             $table->string('matKhau');
-            $table->foreignId('maND')->constrained('nguoidung','maND')->onDelete('cascade');
+            $table->foreignId('maND')->constrained('nguoidung','')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('ngay');
             $table->integer('tongGioLam')->nullable();
             $table->float('cong', 3, 2)->nullable();
-            $table->foreignId('maND')->constrained('nguoidung','maND');
+            $table->foreignId('maND')->constrained('nguoidung');
             $table->timestamps();
         });
         

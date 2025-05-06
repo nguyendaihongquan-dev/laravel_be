@@ -22,8 +22,8 @@ return new class extends Migration
             $table->date('ngayBatDau');
             $table->boolean('trangThaiKhuonMat')->nullable(); // Sử dụng kiểu boolean
             $table->string('IMG')->nullable(); // Thêm thuộc tính IMG
-            $table->foreignId('maVaiTro')->constrained('vaitro', 'maVaiTro');
-            $table->foreignId('maCongTy')->constrained('congty','maCongTy');
+            $table->foreignId('maVaiTro')->constrained('vaitro');
+            $table->foreignId('maCongTy')->constrained('congty');
             $table->timestamps();
         });
     }
